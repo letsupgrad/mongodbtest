@@ -20,7 +20,7 @@ def get_mongo_client():
 client = get_mongo_client()
 
 if client:
-    db =client["your_db_name"]
+    db =client["master"]
     st.success("Connected to MongoDB!")
 
     # Example: List collections
@@ -28,7 +28,7 @@ if client:
     st.write(db.list_collection_names())
 
     # Example: Display one document
-    col = db.get_collection("your_collection_name")  # Replace with your collection
+    col = db.get_collection("billboard")  # Replace with your collection
     doc = col.find_one()
     st.write("Sample Document:")
     st.json(doc)
