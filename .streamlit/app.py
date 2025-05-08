@@ -9,7 +9,7 @@ st.title("MongoDB Connection Test")
 def get_mongo_client():
     try:
         uri = st.secrets["mongo"]["uri"]
-        client = MongoClient(uri, serverSelectionTimeoutMS=5000)
+        client = MongoClient(uri, serverSelectionTimeoutMS=15000)
         client.admin.command("ping")  # Test the connection
         return client
     except ConnectionFailure as e:
